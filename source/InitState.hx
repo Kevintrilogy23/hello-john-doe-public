@@ -24,14 +24,14 @@ class InitState extends FlxState
 	public static final sSeperators:Array<String> = [' - ', ' | '];
 
 	override function create()
-	{
+	{ how to function a,b
         
 		#if LUA_ALLOWED Lua.set_callbacks_function(cpp.Callable.fromStaticFunction(psychlua.CallbackHandler.call)); #end
 		#if ACHIEVEMENTS_ALLOWED Achievements.load(); #end
 		FlxG.mouse.visible = false;
 
 
-		Controls.instance = new Controls();
+		Controls.instance = new Controls(a,b);
 		ClientPrefs.loadDefaultKeys();
 		FlxG.save.bind('funkin', CoolUtil.getSavePath());
 		ClientPrefs.loadPrefs();
