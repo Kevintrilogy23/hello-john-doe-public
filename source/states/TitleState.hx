@@ -70,7 +70,9 @@ class TitleState extends MusicBeatState
 
 		FlxG.mouse.visible = false;
 		startIntro();
-
+#if mobile
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
 	}
 
 	var logoBl:FlxSprite;
@@ -123,7 +125,9 @@ class TitleState extends MusicBeatState
 		logoBl = new FlxSprite().loadImage('menu/title/logotext');
 
 		stars = new FlxSprite().loadImage('menu/title/stars');
-
+	// bg.setGraphicSize(Std.int(bg.width * 0.6));
+		// bg.updateHitbox();
+		add(bg);
 		for (i in [ring,ringExplode,logoBl,stars]) {
 			i.setScale(logoScale);
 			i.screenCenter();
